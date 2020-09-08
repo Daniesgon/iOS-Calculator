@@ -42,28 +42,71 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        //Round Out Buttons
+        operatorAC.round()
+        operatorReverse.round()
+        operatorPercent.round()
+        operatorDivision.round()
+        operatorMultiplication.round()
+        operatorSubtraction.round()
+        operatorSum.round()
+        operatorResult.round()
+        operatorDecimal.round()
+        
+        number0.round()
+        number1.round()
+        number2.round()
+        number3.round()
+        number4.round()
+        number5.round()
+        number6.round()
+        number7.round()
+        number8.round()
+        number9.round()
+        
     }
     
-    @IBAction func buttonOperatorAC(_ sender: Any) {
+    @IBAction func buttonOperatorAC(_ sender: UIButton) {
+        
+        sender.shine()
     }
-    @IBAction func buttonOperatorReverse(_ sender: Any) {
+    @IBAction func buttonOperatorReverse(_ sender: UIButton) {
+        
+        sender.shine()
     }
-    @IBAction func buttonOperatorPercent(_ sender: Any) {
+    @IBAction func buttonOperatorPercent(_ sender: UIButton) {
+        
+        sender.shine()
     }
-    @IBAction func buttonOperatorDivision(_ sender: Any) {
+    @IBAction func buttonOperatorDivision(_ sender: UIButton) {
+        
+        sender.shine()
     }
-    @IBAction func buttonOperatorMultiplication(_ sender: Any) {
+    @IBAction func buttonOperatorMultiplication(_ sender: UIButton) {
+        
+        sender.shine()
     }
-    @IBAction func buttonOperatorSubtraction(_ sender: Any) {
+    @IBAction func buttonOperatorSubtraction(_ sender: UIButton) {
+        
+        sender.shine()
     }
-    @IBAction func buttonOperatorSum(_ sender: Any) {
+    @IBAction func buttonOperatorSum(_ sender: UIButton) {
+        
+        sender.shine()
     }
-    @IBAction func buttonOperatorResult(_ sender: Any) {
+    @IBAction func buttonOperatorResult(_ sender: UIButton) {
+        
+        sender.shine()
     }
-    @IBAction func buttonOperatorDecimal(_ sender: Any) {
+    @IBAction func buttonOperatorDecimal(_ sender: UIButton) {
+        
+        sender.shine()
     }
     @IBAction func buttonNumber(_ sender: UIButton) {
+        
+        
     }
     
 

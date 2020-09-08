@@ -15,6 +15,7 @@
 		AB127A4825078AE400C24CD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB127A4625078AE400C24CD1 /* LaunchScreen.storyboard */; };
 		AB127A5325078AE400C24CD1 /* iOS_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB127A5225078AE400C24CD1 /* iOS_CalculatorTests.swift */; };
 		AB127A5E25078AE400C24CD1 /* iOS_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB127A5D25078AE400C24CD1 /* iOS_CalculatorUITests.swift */; };
+		AB9FF7F82507DDDE001797B6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF7F72507DDDE001797B6 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AB127A5925078AE400C24CD1 /* iOS-CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB127A5D25078AE400C24CD1 /* iOS_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_CalculatorUITests.swift; sourceTree = "<group>"; };
 		AB127A5F25078AE400C24CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB9FF7F72507DDDE001797B6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				AB127A4425078AE400C24CD1 /* Assets.xcassets */,
 				AB127A4625078AE400C24CD1 /* LaunchScreen.storyboard */,
 				AB127A4925078AE400C24CD1 /* Info.plist */,
+				AB9FF7F72507DDDE001797B6 /* UIButtonExtension.swift */,
 			);
 			path = "iOS-Calculator";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB127A4025078ADF00C24CD1 /* ViewController.swift in Sources */,
+				AB9FF7F82507DDDE001797B6 /* UIButtonExtension.swift in Sources */,
 				AB127A3C25078ADF00C24CD1 /* AppDelegate.swift in Sources */,
 				AB127A3E25078ADF00C24CD1 /* SceneDelegate.swift in Sources */,
 			);
@@ -437,7 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RHJPZ3UHAT;
 				INFOPLIST_FILE = "iOS-Calculator/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RHJPZ3UHAT;
 				INFOPLIST_FILE = "iOS-Calculator/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
