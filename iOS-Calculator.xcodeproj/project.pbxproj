@@ -102,13 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				AB127A3B25078ADF00C24CD1 /* AppDelegate.swift */,
+				AB9FF7FC2507F0ED001797B6 /* Controllers */,
+				AB9FF7FA2507F0B8001797B6 /* Views */,
+				AB9FF7F92507F091001797B6 /* Utilities */,
 				AB127A3D25078ADF00C24CD1 /* SceneDelegate.swift */,
-				AB127A3F25078ADF00C24CD1 /* ViewController.swift */,
-				AB127A4125078ADF00C24CD1 /* Main.storyboard */,
 				AB127A4425078AE400C24CD1 /* Assets.xcassets */,
-				AB127A4625078AE400C24CD1 /* LaunchScreen.storyboard */,
 				AB127A4925078AE400C24CD1 /* Info.plist */,
-				AB9FF7F72507DDDE001797B6 /* UIButtonExtension.swift */,
 			);
 			path = "iOS-Calculator";
 			sourceTree = "<group>";
@@ -129,6 +128,39 @@
 				AB127A5F25078AE400C24CD1 /* Info.plist */,
 			);
 			path = "iOS-CalculatorUITests";
+			sourceTree = "<group>";
+		};
+		AB9FF7F92507F091001797B6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AB9FF7F72507DDDE001797B6 /* UIButtonExtension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AB9FF7FA2507F0B8001797B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB127A4125078ADF00C24CD1 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB9FF7FB2507F0CF001797B6 /* Launcher */ = {
+			isa = PBXGroup;
+			children = (
+				AB127A4625078AE400C24CD1 /* LaunchScreen.storyboard */,
+			);
+			path = Launcher;
+			sourceTree = "<group>";
+		};
+		AB9FF7FC2507F0ED001797B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB9FF7FB2507F0CF001797B6 /* Launcher */,
+				AB127A3F25078ADF00C24CD1 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
