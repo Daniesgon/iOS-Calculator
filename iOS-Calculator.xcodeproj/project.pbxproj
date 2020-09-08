@@ -102,11 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				AB127A3B25078ADF00C24CD1 /* AppDelegate.swift */,
+				AB127A3D25078ADF00C24CD1 /* SceneDelegate.swift */,
 				AB9FF7FC2507F0ED001797B6 /* Controllers */,
 				AB9FF7FA2507F0B8001797B6 /* Views */,
 				AB9FF7F92507F091001797B6 /* Utilities */,
-				AB127A3D25078ADF00C24CD1 /* SceneDelegate.swift */,
-				AB127A4425078AE400C24CD1 /* Assets.xcassets */,
+				AB9FF7FD2507F1B1001797B6 /* Images */,
 				AB127A4925078AE400C24CD1 /* Info.plist */,
 			);
 			path = "iOS-Calculator";
@@ -161,6 +161,14 @@
 				AB127A3F25078ADF00C24CD1 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB9FF7FD2507F1B1001797B6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AB127A4425078AE400C24CD1 /* Assets.xcassets */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
