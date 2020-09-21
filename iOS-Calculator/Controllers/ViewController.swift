@@ -10,6 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private var operation: operationType = .none
+    private var operating: Bool = false
+    private var decimal:Bool = false
+    
+    private var total: Double = 0.0
+    private var temp: Double = 0.0
+    
+    private enum operationType {
+        case none
+        case percent
+        case division
+        case multiplication
+        case subtraction
+        case sum
+    }
+    
+    //Constants
+    private let kMaxLenght :Int = 9
+    private let kMaxNumber :Double = 999999999
+    private let kMinNumber :Double = 0.00000001
+    private let kDecimal = ","
+    
     
     //Display
     @IBOutlet weak var display: UILabel!
@@ -37,7 +59,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var number8: UIButton!
     @IBOutlet weak var number9: UIButton!
     
+    private let auxFormmater : NumberFormatter = {
+        let formmater = NumberFormatter()
+        let locale = Locale.current
+        formmater.groupingSeparator = ""
+        formmater.decimalSeparator = ","
+        formmater.numberStyle = .decimal
+        return formmater
+    }()
     
+    private let printFormmater : NumberFormatter = {
+        let formmater = NumberFormatter()
+        let locale = Locale.current
+        formmater.groupingSeparator = locale.groupingSeparator
+        formmater.decimalSeparator = locale.decimalSeparator
+        formmater.numberStyle = .decimal
+        formmater.maximumIntegerDigits = 9
+        formmater.minimumFractionDigits = 0
+        formmater.maximumFractionDigits = 8
+        return formmater
+    }()
     
     
     override func viewDidLoad() {
@@ -70,46 +111,146 @@ class ViewController: UIViewController {
     
     @IBAction func buttonOperatorAC(_ sender: UIButton) {
         
+        clean()
         sender.shine()
+        
     }
     @IBAction func buttonOperatorReverse(_ sender: UIButton) {
         
+        temp = temp * (-1)
+        display.text = printFormmater.string(from: NSNumber(value: temp))
         sender.shine()
+        
     }
     @IBAction func buttonOperatorPercent(_ sender: UIButton) {
         
+        calculate()
+        operating = true
+        operation = .percent
         sender.shine()
+        
     }
     @IBAction func buttonOperatorDivision(_ sender: UIButton) {
         
+        calculate()
+        operating = true
+        operation = .division
         sender.shine()
+        
     }
     @IBAction func buttonOperatorMultiplication(_ sender: UIButton) {
         
+        calculate()
+        operating = true
+        operation = .multiplication
         sender.shine()
+        
     }
     @IBAction func buttonOperatorSubtraction(_ sender: UIButton) {
         
+        calculate()
+        operating = true
+        operation = .subtraction
         sender.shine()
+        
     }
     @IBAction func buttonOperatorSum(_ sender: UIButton) {
         
+        calculate()
+        operating = true
+        operation = .sum
         sender.shine()
+        
     }
     @IBAction func buttonOperatorResult(_ sender: UIButton) {
         
+        calculate()
         sender.shine()
+        
     }
     @IBAction func buttonOperatorDecimal(_ sender: UIButton) {
         
+        let currentTemp = auxFormmater.string(from: NSNumber(value: temp))
+        if !operating && currentTemp!.count >= kMaxLenght {
+            return
+        }
+        display.text = display.text! + kDecimal
+        decimal = true
         sender.shine()
+        
     }
     @IBAction func buttonNumber(_ sender: UIButton) {
         
+        operatorAC.setTitle("C", for: .normal)
+        var currentTemp = auxFormmater.string(from: NSNumber(value: temp))
+        if !operating && kMaxLenght < currentTemp!.count {
+            return
+        }
+        
+        if operating {
+            total = total == 0 ? temp : total
+            currentTemp = ""
+            display.text = ""
+            operating = false
+        }
+        
+        if decimal {
+            currentTemp = currentTemp! + kDecimal
+        }
+        
+        let number = sender.tag
+        temp  = Double(currentTemp! + String(number))!
+        display.text = printFormmater.string(from: NSNumber(value: temp))
+        
+        sender.shine()
         
     }
     
-
+    func clean () {
+        operatorAC.setTitle("AC", for: .normal)
+        operation = .none
+        
+        if temp != 0 {
+            temp = 0
+            display.text = "0"
+        }
+        total = 0
+        
+    }
+    
+    func calculate () {
+        
+        switch operation {
+        case .none:
+        break
+            
+        case .percent:
+            temp = temp / 100
+            total = temp
+        break
+            
+        case .division:
+            total = total / temp
+        break
+            
+        case .multiplication:
+            total = total * temp
+        break
+            
+        case .subtraction:
+            total = total - temp
+        break
+            
+        case .sum:
+            total = total + temp
+        break
+        }
+        
+        //Comprobamos que el valor calculado esta comprendido en el rango maximo y minimo permitido
+        if total <= kMaxNumber && total >= kMinNumber {
+            display.text = printFormmater.string(from: NSNumber(value: total))
+        }
+    }
 
 }
 
