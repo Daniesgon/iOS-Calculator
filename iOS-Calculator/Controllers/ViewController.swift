@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     //Constants
-    private let kMaxLenght :Int = 9
+    private let kMaxLength :Int = 9
     private let kMaxNumber :Double = 999999999
     private let kMinNumber :Double = 0.00000001
     private let kDecimal = ","
@@ -171,7 +171,7 @@ class ViewController: UIViewController {
     @IBAction func buttonOperatorDecimal(_ sender: UIButton) {
         
         let currentTemp = auxFormmater.string(from: NSNumber(value: temp))
-        if !operating && currentTemp!.count >= kMaxLenght {
+        if !operating && currentTemp!.count >= kMaxLength {
             return
         }
         display.text = display.text! + kDecimal
@@ -183,7 +183,7 @@ class ViewController: UIViewController {
         
         operatorAC.setTitle("C", for: .normal)
         var currentTemp = auxFormmater.string(from: NSNumber(value: temp))
-        if !operating && kMaxLenght < currentTemp!.count {
+        if !operating && kMaxLength <= currentTemp!.count {
             return
         }
         
