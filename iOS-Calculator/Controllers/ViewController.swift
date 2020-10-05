@@ -124,7 +124,9 @@ class ViewController: UIViewController {
     }
     @IBAction func buttonOperatorPercent(_ sender: UIButton) {
         
-        calculate()
+        if operating {
+            calculate()
+        }
         operating = true
         operation = .percent
         sender.shine()
@@ -132,7 +134,9 @@ class ViewController: UIViewController {
     }
     @IBAction func buttonOperatorDivision(_ sender: UIButton) {
         
-        calculate()
+        if operating {
+            calculate()
+        }
         operating = true
         operation = .division
         sender.shine()
@@ -140,7 +144,9 @@ class ViewController: UIViewController {
     }
     @IBAction func buttonOperatorMultiplication(_ sender: UIButton) {
         
-        calculate()
+        if operating {
+            calculate()
+        }
         operating = true
         operation = .multiplication
         sender.shine()
@@ -148,7 +154,9 @@ class ViewController: UIViewController {
     }
     @IBAction func buttonOperatorSubtraction(_ sender: UIButton) {
         
-        calculate()
+        if operation != .none {
+            calculate()
+        }
         operating = true
         operation = .subtraction
         sender.shine()
@@ -156,7 +164,9 @@ class ViewController: UIViewController {
     }
     @IBAction func buttonOperatorSum(_ sender: UIButton) {
         
-        calculate()
+        if operating {
+            calculate()
+        }
         operating = true
         operation = .sum
         sender.shine()
